@@ -1,24 +1,32 @@
-//console.log("js has been loaded");
-// variables, methods and functions 
-//1. variables 
+// console.log("js has been loaded");
+
+// variables, methods and functions
+
+// 1. variables
 const myName = "Sarah Frankel";
 console.log(myName);
 
-const myAge =21;
-const myCity= "syracuse"; 
-console.log(myCity);
-const introduction =`Hi, my name is ${myName}, I am ${myAge} years old and i live in 
-${myCity}`;
+const myAge = 21;
+const myCity = "Syracuse";
+
+const introduction = `Hi, my name is ${myName}, I am ${myAge} years old and I live in ${myCity}.`;
+
 console.log(introduction);
 
-//2. meathods 
+
+// 2. methods
 const menuBtn = document.getElementById("menuBtn");
-const overlay=document.getElementById("overlay");
+const closeBtn = document.getElementById("closeBtn");
+const overlay = document.getElementById("overlay");
 
+//console.log(menuBtn);
 
-console.long(menuBtn);
+// "event name", callback function
+menuBtn.addEventListener("click", function() {
+    //console.log("menu button has been clicked");
+    overlay.classList.add("active");
+}); // end of menuBtn click event
 
-// event name in quotes and call back function -> do soemthing in response of event
-menuBtn.addEventListener("click", function(){}
-//console.log("menu has been clicked");}); 
-//end of menu button click
+closeBtn.addEventListener("click", function() {
+    overlay.classList.remove("active");
+}); // end of closeBtn click event
