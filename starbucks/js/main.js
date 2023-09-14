@@ -32,10 +32,11 @@ closeBtn.addEventListener("click", function() {
 }); // end of closeBtn click event
 
 //arrays and objects and variables 
+//arrays can more than one variable and they are loopable
 const coffeeName="Mocha";
 const coffeeHeadline= document.createElement("h2");
 coffeeHeadline.textContent=coffeeName;
-document.body.appendChild(coffeeHeadline);
+//document.body.appendChild(coffeeHeadline);
 
 //objects 
 const coffee={
@@ -47,12 +48,75 @@ const coffee={
 console.log(coffee.description);
 const coffeeObjHeadline = document.createElement("h2");
 coffeeObjHeadline.textContent=coffee.name
-document.body.appendChild(coffeeObjHeadline);
+//document.body.appendChild(coffeeObjHeadline);
 
-const coffees=["Mocha","Latte", "Espresso"];
-console.log(coffees[0]);
+const coffees=[
+    {
+        name:"mocha",
+        price:3.99,
+        description:"delicious cup of coffee",
+        image: {
+            fileName: "coffee.jpg",
+            width:630,
+            height:630,
+            altText: "a cuo of coffee"
+        }
+    },
+    {
+        name:"latte",
+        price:3.99,
+        description:"delicious cup of coffee", 
+        image:{
+            fileName: "coffee.jpg",
+            width:630,
+            height:630,
+            altText: "a cuo of coffee"
+        }
+    },
+    {
+        name:"espresso",
+        price: 3.99,
+        description:"delicious cup of coffee",
+        image:{
+            fileName: "coffee.jpg",
+            width:630,
+            height:630,
+            altText: "a cuo of coffee"
+        }
+    }
+];
+//console.log(coffees[0]);
 
 coffees.forEach(function(coffee){
-console.log(coffee);
 
-});
+
+const{ name, price, description, image} = coffee; 
+
+const coffeeArticle= document.createElement("Article");
+
+const coffeeImage= document.createElement("img");
+
+coffeeImage.scr=`images/${image.fileName}`;
+coffeeImage.width=image.width;
+coffeeImage.height=image.height;
+coffeeImage.alt=image.altText;
+const coffeeName= document.createElement("h2"); 
+
+coffeeName.textContent= name; 
+
+const coffeeTitle= coffee;
+
+const coffeePrice =document.createElement("h3");
+coffeePrice.textContent=price;
+
+const coffeeDescription = document.createElement("p");
+coffeeDescription.textContent=description;
+
+coffeeArticle.appendChild(coffeeImage);
+coffeeArticle.appendChild(coffeeName);
+coffeeArticle.appendChild(coffeePrice);
+coffeeArticle.appendChild(coffeeDescription);
+document.body.appendChild(coffeeArticle);
+
+
+});// end of coffees for each

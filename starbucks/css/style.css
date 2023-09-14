@@ -1,18 +1,19 @@
+
+
 h1, h2, h3, h4, h5, h6, p, body, ul, li {
     margin: 0;
     padding: 0;
     font: inherit;
 }
-ul,li{
-    list-style: none ; /*removes bullet */
+ul, li {
+    list-style: none; /* removes bullets */
 }
-*{
-
-    box-sizing: border-box;
+* {
+    box-sizing: border-box; /* invert padding */
 }
 :root {
     --starbucks-green: #006241;
-    --medium-gray:rgba(0,0,0,.58 )
+    --medium-gray: rgba(0,0,0,.58);
 }
 
 body {
@@ -28,11 +29,12 @@ body {
     left: -100vw;
     z-index: 1000;
     transition-property: all;
-    transition-duration: .25s;
+    transition-duration: .5s;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2em;
+    /* align-items: center; */
+    padding: 2rem;
 }
 .overlay.active {
     left: 0;
@@ -50,71 +52,64 @@ h1 {
     opacity: 0;
     transition-property: all;
     transition-delay: .25s;
-    transition-duration: .25s;
+    transition-duration: .5s;
 }
-.mobile-nav{
-    
-    padding: 1rem;
+.mobile-nav {
+    /*background-color: yellow;*/
+    /* padding: 1rem; */
 }
-.mobile-nav a{
+.mobile-nav a {
     font-family: Arial;
     font-size: 2rem;
     font-weight: bold;
     color: white;
     display: block;
-    text-decoration: none;
     padding: 1rem 0;
+    text-decoration: none;
+    /* background-color: pink; */
 }
-.mobile-nav ul li{
+.mobile-nav ul li {
     position: relative;
     left: -1rem;
     opacity: 0;
     transition-property: all;
     transition-duration: .5s;
-
 }
-.overlay.active .logo{
+.overlay.active .mobile-nav ul li {
+    /* background-color: red; */
+    opacity: 1;
+    left: 0;
+}
+.overlay.active .mobile-nav ul li:nth-child(1) {
+    transition-delay: .5s;
+}
+.overlay.active .mobile-nav ul li:nth-child(2) {
+    transition-delay: .6s;
+}
+.overlay.active .mobile-nav ul li:nth-child(3) {
+    transition-delay: .7s;
+}
+.overlay.active .logo {
     left: 0;
     opacity: 1;
 }
-
-.overlay.active .mobile-nav ul li{
-    opacity: 1;
-    left:0;
-
-}
-.overlay.active .mobile-nav ul li:nth-child(1){
-    transition-delay: .5s;
-
-}
-
-.overlay.active .mobile-nav ul li:nth-child(2){
-    transition-delay: .6s;
-
-}
-
-.overlay.active .mobile-nav ul li:nth-child(3){
-    transition-delay: .7s;
-
-}
-
-.btn-ui{
-    background-color: pink;
+.btn-ui {
+    background-color: white;
     border: 0;
     padding: 1rem;
 }
-.btn-ui svg{
+.btn-ui svg {
     width: 3rem;
-    height:3rem;
+    height: 3rem;
     fill: var(--medium-gray);
 }
-#closeBtn{
+#closeBtn {
     position: absolute;
     top: 1rem;
     right: 1rem;
     background-color: transparent;
     border: 1px solid white;
 }
-#closeBtn svg{
-    fill:white;
+#closeBtn svg {
+    fill: white;
 }
