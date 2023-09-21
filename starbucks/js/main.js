@@ -18,6 +18,9 @@ console.log(introduction);
 const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
 const overlay = document.getElementById("overlay");
+const coffeeList= document.getElementById("coffeeList");
+const ascendingBtn= document.getElementById("ascendingBtn");
+const decendingBtn= document.getElementById("decendingBtn");
 
 //console.log(menuBtn);
 
@@ -95,6 +98,24 @@ function buildTextElement(element,className, content){
     return newElement;
 }
 
+const sortedCoffees=[...coffees].sort(function(a,b){
+
+if (a.title<b.title){
+    return -1;
+}
+if (a.title>b.title){
+    return 1;
+}
+if (a.title==b.title){
+    return 0;
+}
+
+
+
+});
+//console.log ({sortedCoffees});
+
+
 coffees.forEach(function(coffee){
 
 
@@ -133,10 +154,27 @@ coffeeArticle.appendChild(coffeeImage);
 coffeeArticle.appendChild(coffeeTitle);
 coffeeArticle.appendChild(coffeePrice);
 coffeeArticle.appendChild(coffeeDescription);
-document.body.appendChild(coffeeArticle);
 
+
+
+document.body.appendChild(coffeeArticle);
+coffeeList.appendChild(coffeeArticle);
+
+function sortList(sortDirection){
+    console.log({sortDirection})
+}
+function.purgeList(){}
+
+ascendingBtn.addEventListener("click", function(){
+    console.log("ascedning button")
+})
+
+decendingBtn.addEventListener("click", function(){
+    console.log("decedning button")
+})
 
 });// end of coffees for each
+
 
 //basic array
 // const basicCoffee=["mocha", "latte", "espresso"];
