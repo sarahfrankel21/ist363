@@ -126,7 +126,7 @@ coffeeArticle.classList.add("coffee-item");
 
 const coffeeImage= document.createElement("img");
 
-coffeeImage.scr=`images/${image.fileName}`;
+coffeeImage.src=`images/${image.fileName}`;
 coffeeImage.width=image.width;
 coffeeImage.height=image.height;
 coffeeImage.alt=image.altText;
@@ -135,7 +135,7 @@ coffeeImage.alt=image.altText;
 // coffeeTitle.textContent= title; 
 // coffeeTitle.classList.add("coffee-title");
 
-const coffeeTitle= buildTextElement("h2","coffee-title","title")
+const coffeeTitle= buildTextElement("h2","coffee-title",title)
 
 //const coffeeTitle= coffee;
 
@@ -156,24 +156,28 @@ coffeeArticle.appendChild(coffeePrice);
 coffeeArticle.appendChild(coffeeDescription);
 
 
-
-document.body.appendChild(coffeeArticle);
 coffeeList.appendChild(coffeeArticle);
+});// end of coffees for each
+
 
 function sortList(sortDirection){
     console.log({sortDirection})
 }
-function.purgeList(){}
+function purgeList(){
+    coffeeList.innerHTML="";
+}
 
 ascendingBtn.addEventListener("click", function(){
-    console.log("ascedning button")
+    console.log("ascedning button");
+    purgeList();
 })
 
 decendingBtn.addEventListener("click", function(){
-    console.log("decedning button")
+    console.log("decedning button");
+    purgeList();
 })
 
-});// end of coffees for each
+
 
 
 //basic array
