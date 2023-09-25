@@ -3,24 +3,24 @@
 // variables, methods and functions
 
 // 1. variables
-const myName = "Sarah Frankel";
-console.log(myName);
+const myName = "SARAH FRANKEL";
+//console.log(myName);
 
 const myAge = 21;
 const myCity = "Syracuse";
 
 const introduction = `Hi, my name is ${myName}, I am ${myAge} years old and I live in ${myCity}.`;
 
-console.log(introduction);
+//console.log(introduction);
 
 
 // 2. methods
 const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
 const overlay = document.getElementById("overlay");
-const coffeeList= document.getElementById("coffeeList");
-const ascendingBtn= document.getElementById("ascendingBtn");
-const decendingBtn= document.getElementById("decendingBtn");
+const coffeeList = document.getElementById("coffeeList");
+const ascendingBtn = document.getElementById("ascendingBtn");
+const descendingBtn = document.getElementById("descendingBtn");
 
 //console.log(menuBtn);
 
@@ -34,153 +34,111 @@ closeBtn.addEventListener("click", function() {
     overlay.classList.remove("active");
 }); // end of closeBtn click event
 
-//arrays and objects and variables 
-//arrays can more than one variable and they are loopable
-const coffeeTitle="Mocha";
-const coffeeHeadline= document.createElement("h2");
-coffeeHeadline.textContent=coffeeTitle;
+function purgeList() {
+    coffeeList.innerHTML = "";
+}
+function sortList(sortDirection) {
+    console.log({sortDirection});
+}
+
+ascendingBtn.addEventListener("click", function() {
+    console.log("ascending button has been clicked");
+    purgeList();
+    sortList("ascending");
+}); // end of ascendingBtn click event
+
+descendingBtn.addEventListener("click", function() {
+    console.log("descending button has been clicked");
+    purgeList();
+    sortList("descending");
+}); // end of ascendingBtn click event
+
+// arrays and objects
+
+// basic variable
+const coffeeName = "Mocha";
+const coffeeHeadline = document.createElement("h2");
+coffeeHeadline.textContent = coffeeName;
 //document.body.appendChild(coffeeHeadline);
 
-//objects 
-const coffee={
-    name: "Mocha",
+// objects
+const coffee = {
+    name: "Mochaaaaaaa",
     price: 3.99,
-    description: "This is a delicious cup of coffee"
+    description: "This is a delicious cup of coffee."
 };
+//console.log(coffee.description);
 
-console.log(coffee.description);
 const coffeeObjHeadline = document.createElement("h2");
-coffeeObjHeadline.textContent=coffee.name
-//document.body.appendChild(coffeeObjHeadline);
+coffeeObjHeadline.textContent = coffee.name;
 
-// const coffees=[
-//     {
-//         name:"mocha",
-//         price:3.99,
-//         description:"delicious cup of coffee",
-//         image: {
-//             fileName: "coffee.jpg",
-//             width:630,
-//             height:630,
-//             altText: "a cuo of coffee"
-//         }
-//     },
-//     {
-//         name:"latte",
-//         price:3.99,
-//         description:"delicious cup of coffee", 
-//         image:{
-//             fileName: "coffee.jpg",
-//             width:630,
-//             height:630,
-//             altText: "a cuo of coffee"
-//         }
-//     },
-//     {
-//         name:"espresso",
-//         price: 3.99,
-//         description:"delicious cup of coffee",
-//         image:{
-//             fileName: "coffee.jpg",
-//             width:630,
-//             height:630,
-//             altText: "a cuo of coffee"
-//         }
-//     }
-// ];
-//console.log(coffees[0]);
+const beatles = ["Paul", "George", "Ringo", "John"];
+console.log({beatles});
 
+//beatles.sort();
+//console.log({beatles});
+const sortedBeatles = [...beatles].sort();
+console.log({sortedBeatles});
 
-function buildTextElement(element,className, content){
+function buildTextElement(element, className, content) {
     const newElement = document.createElement(element);
     newElement.classList.add(className);
-    newElement.textContent= content;
+    newElement.textContent = content;
     return newElement;
 }
 
-const sortedCoffees=[...coffees].sort(function(a,b){
+const sortedCoffees = [...coffees].sort(function(a,b) {
+    if (a.title < b.title) {
+        return -1;
+    }
+    if (a.title > b.title) {
+        return 1;
+    }
+    if (a.title === b.title) {
+        return 0;
+    }
+}); // sort method end
 
-if (a.title<b.title){
-    return -1;
-}
-if (a.title>b.title){
-    return 1;
-}
-if (a.title==b.title){
-    return 0;
-}
+//console.log({sortedCoffees});
 
+sortedCoffees.forEach(function(coffee) {
+    // 1 . deconstruct the coffee object
+    const { title, price, description, image } = coffee;
 
+    // 2. create the html elements
+    const coffeeArticle = document.createElement("article");
+    coffeeArticle.classList.add("coffee-item");
 
-});
-//console.log ({sortedCoffees});
+    const coffeeImage = document.createElement("img");
+    coffeeImage.src = `images/${image.fileName}`;
+    coffeeImage.width = image.width;
+    coffeeImage.height = image.height;
+    coffeeImage.alt = image.altText;
 
+    // const coffeeTitle = document.createElement("h2");
+    // coffeeTitle.classList.add("coffee-title");
+    // coffeeTitle.textContent = title;
 
-coffees.forEach(function(coffee){
+    const coffeeTitle = buildTextElement("h2", "coffee-title", title);
 
+    // const coffeePrice = document.createElement("h3");
+    // coffeePrice.classList.add("coffee-price");
+    // coffeePrice.textContent = `$${price}`;
 
-const{ title, price, description, image} = coffee; 
+    const coffeePrice = buildTextElement("h3", "coffee-price", `$${price}`);
 
-const coffeeArticle= document.createElement("Article");
-coffeeArticle.classList.add("coffee-item");
+    const coffeeDescription = document.createElement("p");
+    coffeeDescription.classList.add("coffee-description");
+    coffeeDescription.textContent = description;
 
-const coffeeImage= document.createElement("img");
+    // 3. append the elements to the parent article
+    coffeeArticle.appendChild(coffeeImage);
+    coffeeArticle.appendChild(coffeeTitle);
+    coffeeArticle.appendChild(coffeePrice);
+    coffeeArticle.appendChild(coffeeDescription);
 
-coffeeImage.src=`images/${image.fileName}`;
-coffeeImage.width=image.width;
-coffeeImage.height=image.height;
-coffeeImage.alt=image.altText;
-
-// const coffeeTitle= document.createElement("h2"); 
-// coffeeTitle.textContent= title; 
-// coffeeTitle.classList.add("coffee-title");
-
-const coffeeTitle= buildTextElement("h2","coffee-title",title)
-
-//const coffeeTitle= coffee;
-
-// const coffeePrice =document.createElement("h3");
-// coffeePrice.classList.add("coffee-price");
-// coffeePrice.textContent=`$${price}`;
-
-const coffeePrice= buildTextElement("h3","coffee-price",`$${price}`);
-
-
-const coffeeDescription = document.createElement("p");
-coffeeDescription.classList.add("coffee-description");
-coffeeDescription.textContent=description;
-
-coffeeArticle.appendChild(coffeeImage);
-coffeeArticle.appendChild(coffeeTitle);
-coffeeArticle.appendChild(coffeePrice);
-coffeeArticle.appendChild(coffeeDescription);
+    // 4. append the article to the body
+    coffeeList.appendChild(coffeeArticle);
+}); // end of coffees forEach method
 
 
-coffeeList.appendChild(coffeeArticle);
-});// end of coffees for each
-
-
-function sortList(sortDirection){
-    console.log({sortDirection})
-}
-function purgeList(){
-    coffeeList.innerHTML="";
-}
-
-ascendingBtn.addEventListener("click", function(){
-    console.log("ascedning button");
-    purgeList();
-})
-
-decendingBtn.addEventListener("click", function(){
-    console.log("decedning button");
-    purgeList();
-})
-
-
-
-
-//basic array
-// const basicCoffee=["mocha", "latte", "espresso"];
-// basicCoffee.forEach(function(basicCoffee){});
-// console.log({basicCoffee})
