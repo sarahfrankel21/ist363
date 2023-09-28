@@ -6,10 +6,13 @@ const descendingBtn = document.getElementById("descendingBtn");
 const coffeeList = document.getElementById("coffeeList");
 const priceRanges= document.getElementById("priceRanges");
 
+let filteredCoffees=[...coffees];
+let sortDirection="ascending"
 const purgeList = () => {
     coffeeList.innerHTML = "";
 }
 const sortListByDirection = (direction, arr) => {
+    sortDirection=direction;
     const sortedListArr = [...arr].sort((a,b) => {
         if (direction === "ascending") {
             if (a.title < b.title) {
@@ -30,6 +33,7 @@ function buildTextElement(element, className, content) {
     return newElement;
 }
 const displayList = (arr) => {
+    purgeList();
     arr.forEach((coffee) => {
         //  deconstruct the coffee object
         const { title, price, description, image } = coffee;
@@ -64,7 +68,7 @@ const displayList = (arr) => {
 // 2. Create event listeners for the buttons
 ascendingBtn.addEventListener("click", function() {
     //console.log("ascending button has been clicked");
-    purgeList();
+    //purgeList();
     const sortedList = sortListByDirection("ascending", coffees);
     //console.log({sortedList});
     displayList(sortedList);
@@ -72,7 +76,7 @@ ascendingBtn.addEventListener("click", function() {
 
 descendingBtn.addEventListener("click", function() {
     //console.log("descending button has been clicked");
-    purgeList();
+   // purgeList();
     const sortedList = sortListByDirection("descending", coffees);
    // console.log({sortedList});
     displayList(sortedList);
@@ -88,26 +92,31 @@ const splitRange= selectedRange.split("-");
 console.log({splitRange});
 
 if (selectedRange==="all"){
-    purgeList();
-    displayList(coffees);
+   // purgeList();
+   // displayList(coffees);
+   filteredCoffees= sortListByDirection(sortDirection, [...coffees]);
 }else{
     const [minValue, maxValue]= selectedRange.split("-");
-    console.log({minValue, maxValue});
+   // console.log({minValue, maxValue});
     const filteredCoffees=filterCoffees(minValue,maxValue);
-    purgeList();
+
+    filteredCoffees= sortListByDirections(sortDirection, tempFilteredCoffees);
+    //purgeList();
     displayList(filteredCoffees);
 }
 
 
 });
 const filterCoffees=(minValue, maxValue)=>{
-    const filteredCoffees=coffees.filter((coffee)=>{
+    const filteredArr=coffees.filter((coffee)=>{
 
         const {price}=coffee;
         return price>= minValue&&price<= maxValue
     });
-    console.log({filteredCoffees});
-    return (filteredarr);
+    console.log({filteredArr});
+    return filteredArr;
 }
 
-displayList(coffees);
+const sortedStarterList =sortListByDirection("ascedning", filteredCoffees);
+displayList(sortedStarterList);
+//displayList(coffees);
