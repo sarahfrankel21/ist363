@@ -1,0 +1,28 @@
+@use "../abstract/mixins";
+
+
+@mixin  buildFontProperties($size, $color, $font:"Georgia"){
+    font-size: $ize;
+    color: $color;
+    font-family:$font;}
+
+header {
+    background-color: teal;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    h1 {
+       // font-size: 3rem; color: white; font-family: Georgia;
+        @include buildFontProperties(6rem,red ,Arial )
+    }
+    .btn {
+        background-color: pink;
+        padding: 1rem;
+        border: 0;
+        &:hover {
+            background-color: brown;
+        }
+        &.active {
+            background-color: yellow;
+        }
+    }
+}
