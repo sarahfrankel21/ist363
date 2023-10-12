@@ -1,10 +1,12 @@
-@use"./vedors/normalize";
-@use".regions/header";
-@use"./base/rest";
-@use"./components/overlay";
-@use"./compnents/button";
-@use"./compnents/coffee";
-@use"./base/body";
+@use "./abstract/mixins";
+@use "./vendor/normalize";
+@use "./base/reset";
+@use "./regions/header";
+
+@use "./components/overlay";
+@use "./components/button";
+@use "./components/coffee";
+@use "./base/body";
 
 
 
@@ -58,7 +60,7 @@ header {
     padding-bottom: 1rem;
     h1 {
        // font-size: 3rem; color: white; font-family: Georgia;
-        @include buildFontProperties(6rem,red ,Arial )
+        @include mixins.buildFontProperties(6rem,red ,Arial )
     }
     .btn {
         background-color: pink;

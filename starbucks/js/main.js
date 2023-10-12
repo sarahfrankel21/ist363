@@ -71,6 +71,51 @@ const coffee = {
 
 const coffeeObjHeadline = document.createElement("h2");
 coffeeObjHeadline.textContent = coffee.name;
+//document.body.appendChild(coffeeObjHeadline);
+
+// basic array
+// const basicCoffees = ["mocha", "latte", "espresso"];
+// basicCoffees.forEach(function(basicCoffee) {
+//     console.log({basicCoffee});
+// }); // end of basicCoffees forEach method
+
+
+// const coffees = [
+//     {
+//         name: "Mocha",
+//         price: 3.99,
+//         description: "This is a delicious cup of coffee.",
+//         image: {
+//             fileName: "coffee.jpg",
+//             width: 630,
+//             height: 630,
+//             altText: "A cup of coffee."
+//         }
+//     },
+//     {
+//         name: "Latte",
+//         price: 3.99,
+//         description: "This is a delicious cup of coffee.",
+//         image: {
+//             fileName: "coffee.jpg",
+//             width: 630,
+//             height: 630,
+//             altText: "A cup of coffee."
+//         }
+//     },
+//     {
+//         name: "Espresso",
+//         price: 3.99,
+//         description: "This is a delicious cup of coffee.",
+//         image: {
+//             fileName: "coffee.jpg",
+//             width: 630,
+//             height: 630,
+//             altText: "A cup of coffee."
+//         }
+//     }
+// ];
+//console.log(coffees[2]);
 
 const beatles = ["Paul", "George", "Ringo", "John"];
 console.log({beatles});
@@ -140,5 +185,3 @@ sortedCoffees.forEach(function(coffee) {
     // 4. append the article to the body
     coffeeList.appendChild(coffeeArticle);
 }); // end of coffees forEach method
-
-
