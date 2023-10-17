@@ -13,6 +13,17 @@
     justify-content: center;
     /* align-items: center; */
     padding: 2rem;
+    .logo {
+      width: 8rem;
+      height: auto;
+      margin-bottom: 2rem;
+      position: relative;
+      left: -1rem;
+      opacity: 0;
+      transition-property: all;
+      transition-delay: 0.25s;
+      transition-duration: 0.5s;
+    }
   }
   
   .overlay.active {
@@ -41,17 +52,6 @@
     background-color: yellow;
   }
   
-  .logo {
-    width: 8rem;
-    height: auto;
-    margin-bottom: 2rem;
-    position: relative;
-    left: -1rem;
-    opacity: 0;
-    transition-property: all;
-    transition-delay: 0.25s;
-    transition-duration: 0.5s;
-  }
   
   .mobile-nav {
     /*background-color: yellow;*/

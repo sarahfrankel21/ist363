@@ -1,6 +1,6 @@
 @use "./abstract/mixins";
 @use "./vendor/normalize";
-@use "./base/reset";
+@use "./base";
 @use "./regions/header";
 
 @use "./components/overlay";
@@ -14,17 +14,7 @@ $color_primary: #f94f1a;
 $font_primary: Arial, Verdana, sans-serif;
 
 
-h1, h2, h3, h4, h5, h6, p, body, ul, li {
-    margin: 0;
-    padding: 0;
-    font: inherit;
-}
-ul, li {
-    list-style: none; /* removes bullets */
-}
-* {
-    box-sizing: border-box; /* invert padding */
-}
+
 :root {
     --starbucks-green: #006241;
     --medium-gray: rgba(0,0,0,.58);

@@ -1,0 +1,15 @@
+@use'../abstracts/mixins';
+
+.container{
+    background-color: yellow;
+    width: 100%;
+    @include mixin.breakpoint(tablet){
+        width:96%;
+    }
+    @include mixin.breakpoint(laptop){
+        width:980px;
+    }
+    @include mixin.breakpoint(desktop){
+        width: 1140px;
+    }
+}

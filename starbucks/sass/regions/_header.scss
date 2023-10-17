@@ -7,9 +7,10 @@
     font-family:$font;}
 
 header {
-    background-color: teal;
+    background-color: white;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    border-bottom: 1px soild gray;
     h1 {
        // font-size: 3rem; color: white; font-family: Georgia;
         @include buildFontProperties(6rem,red ,Arial )
