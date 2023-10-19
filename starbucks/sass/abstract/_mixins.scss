@@ -1,10 +1,10 @@
-@mixin  buildFontProperties($size, $color, $font:"Georgia"){
-    font-size: $size;
+@mixin buildFontProperties($size, $color, $font:"Georgia") {
     color: $color;
-    font-family:$font;
+    font-family: $font;
+    font-size: $size;
 }
 
-@mixin breakpoint($value){
+@mixin breakpoint($value) {
 	// need to validate $value
 
 	// if a string use standard breakpoints
@@ -59,4 +59,5 @@
 	// if a length value than use that
 
 	// error warn if string does not match or it is not a length
+
 }

@@ -1,6 +1,6 @@
-@use"../abstract/vars";
+@use "../abstracts/vars";
 
-  body {
-    background-color: #f94f1a;
-    font-family: Arial, Verdana, sans-serif;
-  }
+body {
+    background-color: vars.$color_primary;
+    font-family: vars.$font_primary;
+}

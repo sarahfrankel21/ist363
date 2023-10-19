@@ -7,23 +7,7 @@
     
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <div class="container"> 
-        <div class="row"> </div>
-        <img src="images/starbucks-logo.svg" atl="Starbucks Logo" class="logo"> 
-        <h1>Starbucks</h1>
-        <nav class="nav-desktop"> Desktop nav goes here </nav>
-        <div class="row align-items-center"> 
-        <a href= "">Find a store </a>
-        <a href= ""> sign in</a>
-        <a href= ""> menu </a>
-    </div><!--row -->
-        <button class="btn-ui"> Menu</button>
-    </div>
-        </div>
-    </header>
-    
+<main> 
     <button id="menuBtn" class="btn-ui">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
     </button>
@@ -41,7 +25,24 @@
 
     <div id="coffeeList"></div>
 
-
+</main>
+<body>
+    <header>
+        <div class="container"> 
+        <div class="row"> </div>
+        <img src="images/starbucks-logo.svg" atl="Starbucks Logo" class="logo"> 
+        <h1>Starbucks</h1>
+        <nav class="nav-desktop"> Desktop nav goes here </nav>
+        <div class="row align-items-center"> 
+        <a href= "">Find a store </a>
+        <a href= ""> sign in</a>
+        <a href= ""> menu </a>
+    </div><!--row -->
+        <button class="btn-ui"> Menu</button>
+    </div>
+        </div>
+    </header>
+    
 
     <div class="overlay" id="overlay">
         <button id="closeBtn" class="btn-ui">
@@ -53,18 +54,40 @@
             class="logo"
         />
        <nav class="mobile-nav">
-        <ul>
-            <li><a href="">Menu</a></li>
-            <li><a href="">Rewards</a></li>
-            <li><a href="">Gift cards</a></li>
+        <ul class="nav--navlsi">
+            <li class="nav__item"><a class="nav__link" href="">Menu</a>
+            </li class="nav__item">
+             <li class="nav__item"><a class="nav__link" href="">Rewards</a></li>
+            <li class="nav__item"><a class="nav__link" href="">Gift cards</a></li>
         </ul>
        </nav>
     </div>
+    <footer> 
+
+        <nav class="nav nav--social"> 
+            <ul class="nav_list" media icons>
+                <li class="nav_item"><a href="" class="nav_link" target="blank">fb</a></li>
+                <li class="nav_item"><a href="" class="nav_link"target="blank">twitter</a></li>
+                <li class="nav_item"><a href="" class="nav_link" target="blank">linkedin</a></li>
+
+            </ul> 
+            <ul class="nav_list">
+                <li class="nav_item">
+                    <a href="" class="nav_link">privacy policy</a></li>
+                <li class="nav_item">
+                    <a href="" class="nav_link">terms of use</a></li>
+                <li class="nav_item">
+                    <a href="" class="nav_link">CA supply chain ac</a></li>
+                <li class="nav_item">
+                    <a href="" class="nav_link">cookie prefrenaces</a></li>
+            </ul>
+
+                <ui> </ui></nav>
+        <nav> footer nav</nav>
+        <p> copy right</p>
+    </footer>
     <script src="js/coffees.js"></script>
     <script src="js/coffeeApp.js"></script>
-   <!--<script src="js/sandbox.js"></script>--> 
-    <!--<script src="js/beatles.js"></script>-->
-    <!--<script src="js/main.js"></script>-->
    
 </body>
 </html>

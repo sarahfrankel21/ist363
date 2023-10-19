@@ -1,52 +1,20 @@
 .btn-ui {
-    background-color: white;
-    border: 0;
-    padding: 1rem;
-  }
-  
-  .btn-ui svg {
-    width: 3rem;
-    height: 3rem;
-    fill: var(--medium-gray);
-  }
-  
-  #closeBtn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: transparent;
-    border: 1px solid white;
-  }
-  
-  #closeBtn svg {
-    fill: white;
-  }
-  
-  .coffee-item {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid gray;
-  }
-  
-  .coffee-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    font-family: Arial;
-    color: black;
-  }
-  
-  .coffee-price {
-    font-size: 1.25rem;
-    font-weight: normal;
-    margin-bottom: 0.5rem;
-    font-family: Arial;
-    color: gray;
-  }
-  
-  .coffee-description {
-    font-size: 1rem;
-    font-weight: normal;
-    font-family: Arial;
-    color: black;
-  }
+  background-color: white;
+  border: 0;
+  padding: 1rem;
+}
+.btn-ui svg {
+  width: 3rem;
+  height: 3rem;
+  fill: var(--medium-gray);
+}
+#closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: 1px solid white;
+}
+#closeBtn svg {
+  fill: white;
+}
