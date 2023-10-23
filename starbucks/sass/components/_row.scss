@@ -1,9 +1,10 @@
-.row{
+.row {
     display: flex;
-    &.justify-content-space-between{
+    gap: 1rem;
+    &.justify-content-space-between {
         justify-content: space-between;
     }
-    &.align-items-center{
+    &.align-items-center {
         align-items: center;
     }
 }

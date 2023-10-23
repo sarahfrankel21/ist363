@@ -185,3 +185,5 @@ sortedCoffees.forEach(function(coffee) {
     // 4. append the article to the body
     coffeeList.appendChild(coffeeArticle);
 }); // end of coffees forEach method
+
+
